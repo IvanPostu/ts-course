@@ -1,1 +1,1 @@
-import './basic-js/1_prototype'
+import './basic-js/2_call_bind_apply'
