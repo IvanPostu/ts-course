@@ -7,14 +7,14 @@
 export const personWithoutToStringMethod = new Object({
   name: 'Maxim',
   age: 25,
-  greet: function () {
+  greet: function (): void {
     console.log('Greet')
   },
 })
 
 export const personWithToStringMethod = {
   ...personWithoutToStringMethod,
-  toString: function () {
+  toString: function (): string {
     return 'Overrided to string method.'
   },
 }

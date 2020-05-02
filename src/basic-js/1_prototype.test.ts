@@ -6,6 +6,6 @@ describe('Прототипы: ', () => {
   })
 
   test('Должен вернуть return от переопределенного метода toString для простого js обьекта', () => {
-    expect(personWithoutToStringMethod.toString()).toBe(new Object().toString())
+    expect(personWithToStringMethod.toString()).toBe('Overrided to string method.')
   })
 })
