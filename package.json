@@ -1,0 +1,25 @@
+{
+  "name": "ts-course",
+  "version": "1.0.0",
+  "description": "Javascript course.",
+  "main": "index.ts",
+  "scripts": {
+    "start": "echo \"The value of --foo is '${npm_config_foo}'\"",
+    "t": "node_modules/.bin/ts-node ./src/index.ts ",
+    "test": "jest"
+  },
+  "keywords": [
+    "js",
+    "ts",
+    "javascript",
+    "typescript"
+  ],
+  "author": "IvanPostu",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.5.4",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
+  }
+}
