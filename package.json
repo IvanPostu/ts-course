@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node_modules/.bin/ts-node ./src/index.ts ",
-    "test": "jest"
+    "test": "jest $*"
   },
   "keywords": [
     "js",

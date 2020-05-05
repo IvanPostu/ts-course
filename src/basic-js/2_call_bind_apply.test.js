@@ -16,8 +16,8 @@ function hello() {
   }
 }
 
-describe('Контекст: ', () => {
-  test('Функция bind возвращает новую функцию.', () => {
+describe('Context: ', () => {
+  test('Bind method return a new function.', () => {
     function q() {
       console.log(1)
     }
@@ -25,7 +25,7 @@ describe('Контекст: ', () => {
     expect(q === q.bind({})).toBe(false)
   })
 
-  test('Контекст функции hello в объекте audi и внутри объекта jorik разный.', () => {
+  test('Context for hello function in object audi and inside object jorik is different.', () => {
     const jorik = {
       name: 'Jorik',
       age: 38,
@@ -43,8 +43,8 @@ describe('Контекст: ', () => {
     expect(JSON.stringify(jorikContext)).not.toEqual(JSON.stringify(audiContext))
   })
 
-  test(`Контекст функции sayHello: hello, в объекте jorik равен 
-  sayHelloJorik: hello.bind(jorik) внутри объекта rick.`, () => {
+  test(`Context for function sayHello: hello, in object jorik is equal 
+  sayHelloJorik: hello.bind(jorik) inside object rick.`, () => {
     const jorik = {
       name: 'Jorik',
       age: 38,
@@ -62,7 +62,7 @@ describe('Контекст: ', () => {
     expect(JSON.stringify(jorikContext)).toEqual(JSON.stringify(jorikContextInRickObject))
   })
 
-  test('Использование функции с контекстом и переменными для разных объектов.', () => {
+  test('Using function with context and variables for different types.', () => {
     const musya = {
       name: 'Musya',
       age: 22,
@@ -90,7 +90,7 @@ describe('Контекст: ', () => {
     expect(georgelLog.includes('dvornik') && georgelLog.includes('samsung')).toBeTruthy()
   })
 
-  test('Функция call и apply пример.', () => {
+  test('Function call and apply example.', () => {
     const musya = {
       name: 'Musya',
       age: 22,
@@ -115,5 +115,26 @@ describe('Контекст: ', () => {
     const justApply = musya.logInfo.apply(georgel, ['dvornik', 'samsung'])
     expect(execBindResult === justCall).toBe(true)
     expect(execBindResult === justApply).toBe(true)
+  })
+
+  test('Write own implementation of bind function.', () => {
+    function bind(context, func) {
+      return function (...args) {
+        return func.call(context, args)
+      }
+    }
+
+    const person1 = { name: 'John', age: 22 }
+    const person2 = { name: 'Harry', age: 21 }
+
+    function logger() {
+      return `${this.name} - age: ${this.age}`
+    }
+
+    const person1Logger = bind(person1, logger)
+    const person2Logger = bind(person2, logger)
+
+    expect(person1Logger()).toBe('John - age: 22')
+    expect(person2Logger()).toBe('Harry - age: 21')
   })
 })
