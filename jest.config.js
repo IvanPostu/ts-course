@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { defaults } = require('jest-config')
-
 module.exports = {
-  moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx', 'js'],
-  // verbose: true,
+  roots: ['<rootDir>/src'],
+  testMatch: ['**/__tests__/**/*.+(ts|tsx|js)', '**/?(*.)+(spec|test).+(ts|tsx|js)'],
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
 }

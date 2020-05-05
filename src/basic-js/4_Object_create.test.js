@@ -48,16 +48,9 @@ describe('Simple Object.create', () => {
   })
 
   test('Write non writable field:', () => {
-    let errorMesage = ''
-    try {
-      person.name = 'Zuzuka'
-    } catch (e) {
-      errorMesage = e.message
-    }
+    person.name = 'Zuzuka'
 
-    expect(
-      errorMesage.includes("Cannot assign to read only property 'name' of object '#<Object>'"),
-    ).toBeTruthy()
+    expect(person.name === 'Zuzuka').not.toBeTruthy()
   })
 
   test('Delete field with prop. configurable is true: ', () => {
@@ -66,13 +59,8 @@ describe('Simple Object.create', () => {
   })
 
   test('Delete field with prop. configurable is false: ', () => {
-    let errorMessage = ''
-    try {
-      delete person.dateOfBirth
-    } catch (e) {
-      errorMessage = e.message
-    }
-    expect(errorMessage.includes("Cannot delete property 'dateOfBirth' of #<Object>")).toBeTruthy()
+    delete person.dateOfBirth
+    expect(person.dateOfBirth).not.toBeUndefined()
   })
 
   test('Test age: ', () => {
