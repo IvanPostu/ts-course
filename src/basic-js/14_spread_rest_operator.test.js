@@ -66,25 +66,4 @@ describe('Spread and Rest operator test: ', () => {
 
     expect(totalSum).toBe(29)
   })
-
-  test('Very simple destructurization for array test: ', () => {
-    const arr = [1, 2, 3, 4, 5, 6, 7, 1]
-    const [a, b, ...rest] = arr
-
-    expect(rest).toEqual([3, 4, 5, 6, 7, 1])
-    expect(a === 1 && b === 2).toBeTruthy()
-  })
-
-  test('Very simple destructurization for object test: ', () => {
-    const person = {
-      name: 'Victor',
-      age: 33,
-      isSmart: true,
-      weight: 66,
-    }
-
-    const { name, age, ...rest } = person
-
-    expect(rest).toEqual({ isSmart: true, weight: 66 })
-  })
 })
