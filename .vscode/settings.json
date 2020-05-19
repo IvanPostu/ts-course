@@ -1,5 +1,5 @@
 {
-  "eslint.workingDirectories": ["./frontend", "./worker", "./crawler"],
+  "eslint.workingDirectories": ["./frontend", "."],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     // "source.organizeImports": true,
@@ -31,13 +31,13 @@
   "editor.codeLens": false,
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.fontFamily": "Fira Code Medium",
   "editor.fontLigatures": true,
   "editor.formatOnPaste": false,
   "editor.formatOnType": false,
   "editor.letterSpacing": 0.2,
-  "editor.lineHeight": 16,
+  "editor.lineHeight": 15,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,

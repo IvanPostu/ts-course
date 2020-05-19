@@ -13,11 +13,9 @@ function isPowerOfThreeUsingMath(n: number): boolean {
 
 function isPowerOfThreeUsingLoop(n: number): boolean {
   let a = 3
-  let pow = 1
 
   while (a < n) {
     a *= 3
-    pow++
   }
 
   return a === n

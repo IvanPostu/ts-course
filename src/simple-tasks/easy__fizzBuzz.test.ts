@@ -45,7 +45,6 @@ function fizzBuzz(begin: number, end: number): void {
 
 describe('fizzBuzz module test: ', () => {
   test('fizBuzz function test: ', () => {
-    const argss = []
     const result: Array<string> = [
       '11',
       'Fizz',
